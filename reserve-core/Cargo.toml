@@ -1,0 +1,11 @@
+[package]
+name = "reserve-core"
+version = "0.1.0"
+description = "Toolchain-free test harness for the PayLane reserve invariant (same source as the on-chain program)."
+edition = "2021"
+
+[lib]
+name = "reserve_core"
+path = "src/lib.rs"
+
+[dependencies]
