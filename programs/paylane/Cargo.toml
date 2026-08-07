@@ -1,0 +1,30 @@
+[package]
+name = "paylane"
+version = "0.1.0"
+description = "Reserve-gated Solana stablecoin treasury: mint and settle provably cannot exceed on-chain attested reserves."
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "paylane"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = "0.31.1"
+
+[dev-dependencies]
+# solana-program-test runs the real program (and the real SPL Token program)
+# against an in-process bank, so `cargo test` exercises the on-chain path
+# without a validator or the SBF toolchain.
+solana-program-test = "2.3"
+solana-sdk = "2.3"
+spl-token = { version = "7", features = ["no-entrypoint"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }

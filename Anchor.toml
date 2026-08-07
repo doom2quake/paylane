@@ -1,0 +1,30 @@
+# Standard Anchor workspace. `anchor build` produces the deployable SBF artifact
+# when the Solana toolchain is installed; it is NOT installed in this repo's
+# environment, so the artifact has not been built and the program is NOT
+# deployed. The ids below are the `declare_id!` placeholder from lib.rs, not a
+# deployed address: there is no explorer link to check, and the README says so.
+#
+# What does run without that toolchain is `anchor test` / `cargo test`, which
+# drives the real instructions against the real SPL Token program in an
+# in-process bank (programs/paylane/tests/program.rs).
+#
+# Testnet only. Never point `cluster` at mainnet-beta.
+[toolchain]
+anchor_version = "0.31.1"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+paylane = "PayL111111111111111111111111111111111111111"
+
+[programs.localnet]
+paylane = "PayL111111111111111111111111111111111111111"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test -p paylane"

@@ -1,0 +1,20 @@
+# PayLane workspace.
+#
+# `cargo test` builds and tests BOTH members:
+#   * programs/paylane - the real Anchor program, plus `tests/program.rs`, which
+#     drives its instructions against the real SPL Token program under
+#     `solana-program-test` (an in-process bank; no validator, no SBF toolchain).
+#   * reserve-core     - a toolchain-free harness that includes the exact same
+#     `reserve.rs` the program uses, so the invariant is also tested standalone.
+#
+# `anchor build` (Anchor.toml) produces the deployable SBF artifact when the
+# Solana toolchain is installed. See "Toolchain honesty" in the README for what
+# is and is not verified in this environment.
+[workspace]
+resolver = "2"
+members = ["programs/paylane", "reserve-core"]
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
