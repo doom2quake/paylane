@@ -1,0 +1,23 @@
+[project]
+name = "paylane"
+version = "0.1.0"
+description = "Reserve-gated Solana stablecoin rail: an Anchor treasury program that provably cannot mint or settle past on-chain-attested reserves, driven by an agent-core agent."
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+# No `live` extra: this package ships no cluster client, because the program is
+# not deployed. See README, "What is actually verified, and what is not".
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+paylane = "paylane.main:cli"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["paylane*", "agent_core*"]
