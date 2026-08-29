@@ -1,0 +1,4 @@
+# Keep `cargo test` output readable: solana-program-test emits the whole bank
+# debug log otherwise. Program logs are still visible at RUST_LOG=solana_runtime=debug.
+[env]
+RUST_LOG = { value = "error", force = false }
