@@ -16,7 +16,7 @@ cannot drift from the tokens that actually exist.
 attestation path, enforced by a CPI into the real SPL Token program and tested against
 it. Solana devnet target only, never mainnet.
 
-**[▶ Live demo](https://doom2quake.github.io/paylane/ui/)**  ·  **[Watch the walkthrough](https://youtu.be/PAYLANE_VIDEO)**  ·  **[Paper (PDF)](paper/paper.pdf)**  ·  **[Deck (PDF)](deck/deck.pdf)**  ·  Built on **[Solana](https://solana.com/)**
+**[▶ Live demo](https://doom2quake.github.io/paylane/ui/)**  ·  **[Watch the walkthrough](https://youtu.be/IvzUJA82QnI)**  ·  **[Paper (PDF)](paper/paper.pdf)**  ·  **[Deck (PDF)](deck/deck.pdf)**  ·  Built on **[Solana](https://solana.com/)**
 
 Read [What is actually verified, and what is not](#what-is-actually-verified-and-what-is-not)
 first for the short version of what is proved, what is simulated, and what is not built.
@@ -187,7 +187,7 @@ The full milestone-mapped write-up is in [docs/PROPOSAL.md](docs/PROPOSAL.md).
   invented transaction signatures.
 - **Walkthrough video:** [`docs/paylane-demo.mp4`](docs/paylane-demo.mp4), a narrated tour of
   the invariant, the reserve-loss pause, the architecture, and the grant roadmap (also on
-  [YouTube](https://youtu.be/PAYLANE_VIDEO)).
+  [YouTube](https://youtu.be/IvzUJA82QnI)).
 - **Demo script:** `DEMO.md`, the recording kit.
 
 [![PayLane UI](docs/ui.png)](https://doom2quake.github.io/paylane/ui/)
